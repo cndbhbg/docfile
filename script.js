@@ -25,7 +25,7 @@ async function displayLines(lines) {
 
 // Hàm ghi file lên GitHub
 async function writeFile() {
-    const filePath = document.getElementById('filePath').value;  // Đường dẫn file trên GitHub
+    const filePath = document.getElementById('ev.txt').value;  // Đường dẫn file trên GitHub
 
     // Đầu tiên, lấy nội dung hiện tại của file
     const response = await fetch(`https://api.github.com/repos/cndbhbg/docfile/contents/${filePath}`, {
