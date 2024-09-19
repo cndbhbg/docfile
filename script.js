@@ -2,7 +2,7 @@ const token = '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';  // Thay YOUR_TOKEN bá
 
 async function readFile() {
     const filePath = document.getElementById('filePath').value;
-    const response = await fetch(`https://api.github.com/repos/YOUR_USERNAME/YOUR_REPOSITORY/contents/${filePath}`, {
+    const response = await fetch(`https://api.github.com/repos/cndbhbg/docfile/contents/${filePath}`, {
         headers: {
             'Authorization': `token ${token}`
         }
