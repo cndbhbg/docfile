@@ -41,7 +41,7 @@ async function writeFile() {
         const encodedContent = btoa(newContent);  // Mã hóa lại nội dung
 
         // Ghi lại nội dung mới vào file trên GitHub
-        const updateResponse = await fetch(`https://api.github.com/repos/cndbhbg/docfile/contents/${filePath}`, {
+        const updateResponse = await fetch(`ev.txt`, {
             method: 'PUT',
             headers: {
                 'Authorization': `token ${token}`,
@@ -72,7 +72,7 @@ async function clearContent() {
     // Ghi nội dung trống lên file
     const encodedContent = btoa('');  // Mã hóa nội dung trống
 
-    const response = await fetch(`https://api.github.com/repos/cndbhbg/docfile/contents/${filePath}`, {
+    const response = await fetch(`ev.txt`, {
         method: 'PUT',
         headers: {
             'Authorization': `token ${token}`,
