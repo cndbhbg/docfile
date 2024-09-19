@@ -1,6 +1,6 @@
 const token = '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';  // Thay YOUR_TOKEN bằng token của bạn
 
-const token = 'YOUR_TOKEN';  // Thay YOUR_TOKEN bằng token của bạn
+
 
 // Hàm để đọc file ev.txt
 async function readLocalFile() {
