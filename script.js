@@ -1,4 +1,4 @@
-const token = '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';  // Thay YOUR_TOKEN bằng token của bạn
+const token = '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';  // Thay YOUR_TOKEN bằng token của bạn
 
 // Tên file
 const filePath = 'ev.txt';
