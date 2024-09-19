@@ -1,4 +1,4 @@
-const token = 'YOUR_TOKEN';  // Thay YOUR_TOKEN bằng token của bạn
+const token = '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';  // Thay YOUR_TOKEN bằng token của bạn
 
 async function readFile() {
     const filePath = document.getElementById('filePath').value;
@@ -22,7 +22,7 @@ async function writeFile() {
     const content = document.getElementById('fileContent').value;
     const encodedContent = btoa(content);  // Mã hóa nội dung sang Base64
 
-    const response = await fetch(`https://api.github.com/repos/YOUR_USERNAME/YOUR_REPOSITORY/contents/${filePath}`, {
+    const response = await fetch(`https://api.github.com/repos/cndbhbg/docfile/contents/${filePath}`, {
         method: 'PUT',
         headers: {
             'Authorization': `token ${token}`,
