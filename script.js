@@ -1,4 +1,4 @@
-const token = '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';  // Thay YOUR_TOKEN bằng token của bạn
+const token = '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';  // Thay YOUR_TOKEN bằng token của bạn
 
 // Tên file
 const filePath = 'ev.txt';
