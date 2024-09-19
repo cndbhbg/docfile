@@ -123,6 +123,7 @@ async function deleteFile() {
             alert('Không thể xóa file: ' + deleteResponse.statusText);
         }
     } else {
+        const errorData = await response.json();
         alert('Không thể lấy thông tin file: ' + response.statusText);
     }
 }
