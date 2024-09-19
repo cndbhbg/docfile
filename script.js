@@ -2,6 +2,7 @@ const token = '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';  // Thay YOUR_TOKEN b�
 
 
 
+
 // Hàm để đọc file ev.txt
 async function readLocalFile() {
     const response = await fetch('ev.txt');  // Đọc file từ cùng thư mục
@@ -25,26 +26,42 @@ async function displayLines(lines) {
 // Hàm ghi file lên GitHub
 async function writeFile() {
     const filePath = document.getElementById('filePath').value;  // Đường dẫn file trên GitHub
-    const content = document.getElementById('fileContent').value;  // Nội dung từ textarea
-    const encodedContent = btoa(content);  // Mã hóa nội dung sang Base64
 
+    // Đầu tiên, lấy nội dung hiện tại của file
     const response = await fetch(`https://api.github.com/repos/cndbhbg/docfile/contents/${filePath}`, {
-        method: 'PUT',
         headers: {
-            'Authorization': `token ${token}`,
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            message: 'Ghi thêm nội dung',
-            content: encodedContent,
-            branch: 'main'  // Chọn nhánh phù hợp
-        })
+            'Authorization': `token ${token}`
+        }
     });
 
     if (response.ok) {
-        alert('Ghi thêm nội dung thành công!');
+        const data = await response.json();
+        const currentContent = atob(data.content);  // Giải mã nội dung hiện tại
+        const newContent = currentContent + '\n' + document.getElementById('fileContent').value;  // Thêm nội dung mới vào nội dung hiện tại
+        const encodedContent = btoa(newContent);  // Mã hóa lại nội dung
+
+        // Ghi lại nội dung mới vào file trên GitHub
+        const updateResponse = await fetch(`https://api.github.com/repos/cndbhbg/docfile/contents/${filePath}`, {
+            method: 'PUT',
+            headers: {
+                'Authorization': `token ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                message: 'Ghi thêm nội dung',
+                content: encodedContent,
+                sha: data.sha,  // Cần SHA để cập nhật file
+                branch: 'main'  // Chọn nhánh phù hợp
+            })
+        });
+
+        if (updateResponse.ok) {
+            alert('Ghi thêm nội dung thành công!');
+        } else {
+            alert('Không thể ghi file: ' + updateResponse.statusText);
+        }
     } else {
-        alert('Không thể ghi file: ' + response.statusText);
+        alert('Không thể lấy nội dung file: ' + response.statusText);
     }
 }
 
