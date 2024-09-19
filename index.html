@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý File Text trên GitHub</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Quản lý File Text trên GitHub</h1>
+    <textarea id="fileContent" rows="10" cols="50" placeholder="Nội dung file sẽ hiển thị ở đây..."></textarea><br>
+    <input type="text" id="filePath" placeholder="Đường dẫn file (ví dụ: path/to/file.txt)">
+    <br>
+    <button onclick="readFile()">Đọc File</button>
+    <button onclick="writeFile()">Ghi File</button>
+    <button onclick="deleteFile()">Xóa File</button>
+</body>
+</html>
