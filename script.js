@@ -59,7 +59,7 @@ async function writeFile() {
             alert('Không thể ghi file: ' + updateResponse.statusText);
         }
     } else {
-        alert('Không thể lấy nội dung file: ' + response.statusText);
+        alert('Không thể lấy nội dung file: ' + errorData.message);
     }
 }
 
