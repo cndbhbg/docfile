@@ -9,10 +9,11 @@
 <body>
     <h1>Quản lý File Text trên GitHub</h1>
     <textarea id="fileContent" rows="10" cols="50" placeholder="Nội dung file sẽ hiển thị ở đây..."></textarea><br>
-    <input type="text" id="filePath" placeholder="Đường dẫn file (ví dụ: path/to/file.txt)">
+    <input type="text" id="filePath" placeholder="Đường dẫn file (ví dụ: path/to/ev.txt)">
     <br>
-    <button onclick="readFile()">Đọc File</button>
-    <button onclick="writeFile()">Ghi File</button>
+    <button onclick="readLocalFile()">Đọc File</button>
+    <button onclick="writeFile()">Ghi Thêm Nội Dung</button>
+    <button onclick="clearContent()">Xóa Nội Dung</button>
     <button onclick="deleteFile()">Xóa File</button>
 </body>
 </html>
