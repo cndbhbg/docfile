@@ -1,4 +1,4 @@
-const token = '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';  // Thay YOUR_TOKEN bằng token của bạn
+const token = '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';  // Thay YOUR_TOKEN bằng token của bạn
 
 // Tên file
 const filePath = 'ev.txt';
@@ -59,7 +59,7 @@ async function writeFile() {
             alert('Không thể ghi file: ' + updateResponse.statusText);
         }
     } else {
-        alert('Không thể lấy nội dung file: ' + errorData.message);
+        alert('Không thể lấy nội dung file này: ' + errorData.message);
     }
 }
 
