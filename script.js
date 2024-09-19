@@ -59,6 +59,7 @@ async function writeFile() {
             alert('Không thể ghi file: ' + updateResponse.statusText);
         }
     } else {
+        const errorData = await response.json();
         alert('Không thể lấy nội dung file này: ' + errorData.message);
     }
 }
