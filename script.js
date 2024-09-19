@@ -1,8 +1,11 @@
 const token = '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';  // Thay YOUR_TOKEN bằng token của bạn
 
+// Tên file
+const filePath = 'ev.txt';
+
 // Hàm để đọc file ev.txt
 async function readLocalFile() {
-    const response = await fetch('ev.txt');  // Đọc file từ cùng thư mục
+    const response = await fetch(filePath);  // Đọc file từ cùng thư mục
     if (response.ok) {
         const content = await response.text();  // Đọc nội dung file
         const lines = content.split('\n');  // Chia nội dung thành từng dòng
@@ -22,8 +25,6 @@ async function displayLines(lines) {
 
 // Hàm ghi file lên GitHub
 async function writeFile() {
-    const filePath = document.getElementById('filePath').value;  // Đường dẫn file trên GitHub
-
     // Đầu tiên, lấy nội dung hiện tại của file
     const response = await fetch(`https://api.github.com/repos/cndbhbg/docfile/contents/${filePath}`, {
         headers: {
@@ -64,8 +65,6 @@ async function writeFile() {
 
 // Hàm xóa nội dung của file và textarea
 async function clearContent() {
-    const filePath = document.getElementById('filePath').value;  // Đường dẫn file trên GitHub
-
     // Ghi nội dung trống lên file
     const encodedContent = btoa('');  // Mã hóa nội dung trống
 
@@ -93,8 +92,6 @@ async function clearContent() {
 
 // Hàm xóa file trên GitHub
 async function deleteFile() {
-    const filePath = document.getElementById('filePath').value;  // Đường dẫn file trên GitHub
-
     // Lấy SHA của file
     const response = await fetch(`https://api.github.com/repos/cndbhbg/docfile/contents/${filePath}`, {
         headers: {
