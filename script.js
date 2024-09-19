@@ -28,7 +28,7 @@ async function writeFile() {
     const filePath = document.getElementById('ev.txt').value;  // Đường dẫn file trên GitHub
 
     // Đầu tiên, lấy nội dung hiện tại của file
-    const response = await fetch(`https://api.github.com/repos/cndbhbg/docfile/contents/${filePath}`, {
+    const response = await fetch(`ev.txt')
         headers: {
             'Authorization': `token ${token}`
         }
