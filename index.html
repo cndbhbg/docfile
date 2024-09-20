@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quản lý File Text trên GitHub</title>
-    <script src="script.js" defer></script>
+    <title>Công Cụ Soạn Thảo Cá Nhân</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Quản lý File Text trên GitHub</h1>
-    <textarea id="fileContent" rows="10" cols="50" placeholder="Nội dung file sẽ hiển thị ở đây..."></textarea><br>
-    <input type="text" id="filePath" placeholder="Đường dẫn file (ví dụ: path/to/ev.txt)">
-    <br>
-    <button onclick="readLocalFile()">Đọc File</button>
-    <button onclick="writeFile()">Ghi Thêm Nội Dung</button>
-    <button onclick="clearContent()">Xóa Nội Dung</button>
-    <button onclick="deleteFile()">Xóa File</button>
+    <h1>Công Cụ Soạn Thảo Cá Nhân</h1>
+    <textarea id="editor" placeholder="Nhập nội dung ở đây..."></textarea>
+    <script src="script.js"></script>
 </body>
 </html>
